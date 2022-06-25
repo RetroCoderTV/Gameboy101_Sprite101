@@ -1,0 +1,39 @@
+ROM0 bank #0:
+  SECTION: $0000-$006f ($0070 bytes) ["BG Tiles"]
+           $0000 = BG_Tiles
+           $0070 = BG_TilesEnd
+  SECTION: $0070-$0089 ($001a bytes) ["Helper Routines"]
+           $0070 = fill
+           $0074 = fill.fill
+           $0075 = fill.skip
+           $007c = copy
+           $0080 = copy.copy
+           $0083 = copy.skip
+  SECTION: $008a-$0099 ($0010 bytes) ["Sprite Tiles"]
+           $008a = Sprite_Tiles
+           $009a = Sprite_TilesEnd
+  SECTION: $009a-$00a3 ($000a bytes) ["DMA Subroutine on ROM"]
+           $009a = dma_sub_start
+           $00a4 = dma_sub_end
+  SECTION: $0100-$014f ($0050 bytes) ["Header"]
+  SECTION: $0150-$01e4 ($0095 bytes) ["Game"]
+           $0150 = Game
+           $0154 = WaitVBlank
+           $01e1 = WaitVBlank.gameloop
+  SECTION: $01e5-$05e4 ($0400 bytes) ["BG Tilemap"]
+           $01e5 = BG_Tilemap
+           $05e5 = BG_TilemapEnd
+    SLACK: $3a77 bytes
+
+WRAM0 bank #0:
+  SECTION: $c000-$c09f ($00a0 bytes) ["Shadow OAM Area"]
+    SLACK: $0f60 bytes
+
+HRAM bank #0:
+  SECTION: $ff80-$ff89 ($000a bytes) ["DMA Subroutine HRAM Space"]
+    SLACK: $0075 bytes
+
+USED:
+    ROM0: $0589 bytes in 1 bank
+    WRAM0: $00a0 bytes in 1 bank
+    HRAM: $000a bytes in 1 bank
