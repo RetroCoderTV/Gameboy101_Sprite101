@@ -13,13 +13,13 @@ SECTION "Header",ROM0[$100]
 SECTION "Game",ROM0[$150]
 
 Game:
-    di
+    ; di
     ld sp, $E000   
 
-WaitVBlank:
+.WaitVBlank:
 	ld a, [rLY]
 	cp 144
-	jp c, WaitVBlank
+	jp c, .WaitVBlank
 
     ;reset important registers
 	xor	a
@@ -89,13 +89,18 @@ WaitVBlank:
 	ld a, %10000011
 	ld [rLCDC], a
 
-    ei
+    ; ei
 
+    ;each sprite has 4 attributes:
+    ;0=Y
+    ;1=X
+    ;2=TileID
+    ;3=Flags
     ld de, SHADOW_OAM
-    ld a,100
+    ld a,80
     ld [de],a ; y attr
     inc de
-    ld a,100 
+    ld a,80 
     ld [de],a ; x attr
     inc de
     ld a,0 ;t

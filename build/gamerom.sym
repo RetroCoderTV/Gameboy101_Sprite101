@@ -12,7 +12,7 @@
 00:009a dma_sub_start
 00:00a4 dma_sub_end
 00:0150 Game
-00:0154 WaitVBlank
-00:01e1 WaitVBlank.gameloop
-00:01e5 BG_Tilemap
-00:05e5 BG_TilemapEnd
+00:0153 Game.WaitVBlank
+00:01df Game.gameloop
+00:01e3 BG_Tilemap
+00:05e3 BG_TilemapEnd

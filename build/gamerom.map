@@ -16,14 +16,14 @@ ROM0 bank #0:
            $009a = dma_sub_start
            $00a4 = dma_sub_end
   SECTION: $0100-$014f ($0050 bytes) ["Header"]
-  SECTION: $0150-$01e4 ($0095 bytes) ["Game"]
+  SECTION: $0150-$01e2 ($0093 bytes) ["Game"]
            $0150 = Game
-           $0154 = WaitVBlank
-           $01e1 = WaitVBlank.gameloop
-  SECTION: $01e5-$05e4 ($0400 bytes) ["BG Tilemap"]
-           $01e5 = BG_Tilemap
-           $05e5 = BG_TilemapEnd
-    SLACK: $3a77 bytes
+           $0153 = Game.WaitVBlank
+           $01df = Game.gameloop
+  SECTION: $01e3-$05e2 ($0400 bytes) ["BG Tilemap"]
+           $01e3 = BG_Tilemap
+           $05e3 = BG_TilemapEnd
+    SLACK: $3a79 bytes
 
 WRAM0 bank #0:
   SECTION: $c000-$c09f ($00a0 bytes) ["Shadow OAM Area"]
@@ -34,6 +34,6 @@ HRAM bank #0:
     SLACK: $0075 bytes
 
 USED:
-    ROM0: $0589 bytes in 1 bank
+    ROM0: $0587 bytes in 1 bank
     WRAM0: $00a0 bytes in 1 bank
     HRAM: $000a bytes in 1 bank
